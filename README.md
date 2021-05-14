@@ -1,5 +1,3 @@
-# Dart-CheatSheet
-
 ## Table of Contents
 ---
 
@@ -17,8 +15,7 @@
 - [Lists](#lists)
 - [String Operations](#string-operations)
 - [List Operations](#list-operations)
-- [Null-Safety](#null-safety)
-- [Sample Problems](#sample-problems)
+- [Null-Safety](https://stackoverflow.com/questions/60068435/what-is-null-safety-in-dart)
 
 
 ## Hello World
@@ -163,6 +160,15 @@ Convert to a String
         print(stringWeight);
     }
 ```
+
+Convert to a List
+```dart 
+    void main() {
+        var text = "This is a sample text";
+        var myList = text.split(' ');
+        print(myList);
+    }
+```
     
 ## If Else
 ---
@@ -289,3 +295,177 @@ Get a String userinput
     }
  ```
 
+ ## Functions
+ ---
+ A function is a block of organized, reusable code that is used to perform a single, related action.
+
+ ```dart 
+    void main() {
+        add(10, 15); // calling the function below and giving our own parameters.
+    }
+
+    void add(int x,y) {  // function to add two integers x and y.
+        var result = x + y;
+        print(result);
+    }
+```
+
+## Classes 
+---
+A class is an extensible program-code-template for creating objects
+
+```dart 
+    void main() {
+        Operators operators = new Operators();
+        operators.addition(10, 15);
+        operators.subtraction(25, 20);
+        operators.divide(15, 3);
+        operators.multiply(25, 4);
+}
+
+    class Operators {
+        void addition(x, y) {
+            print(x + y);
+            }
+
+        void subtraction(x, y) {
+            print(x - y);
+            }
+
+        void divide(x, y) {
+            print(x / y);
+            }
+
+        void multiply(x, y) {
+            print(x * y);
+            }
+    }
+```
+
+## Try Catch
+---
+```dart 
+    void main(){
+        var myList = [52, 6, 87];
+ 
+        try {
+            for(var i=0;i<10;i++) {
+                print(myList[i]);
+                }
+        } catch (e) {
+            print('Something happened while printing the list');
+            print('Printing out the message: $e');
+    }
+    print('Continuing with the rest of the program..');
+}
+```
+
+## String Operations
+---
+
+### Add Strings
+
+```dart 
+    void main() {
+        String str1 = "Dart";
+        String str2 = "Cheat";
+        String str3 = "Sheet";
+        int num1 = 123;
+        print(str1 + str2 + str3 + num1.toString()); // returns DartCheatSheet123
+    }
+```
+
+### Split Strings
+
+```dart 
+    void main() {
+        var text = "This is a sample text";
+        var myList = text.split(' ');
+        print(myList);
+    }
+```
+### Replace Substring in String
+
+```dart
+    void main() {
+        String para = "This is a sample paragraph";
+        String newPara = para.replaceAll("This", "That");
+        print(para);
+        print(newPara);
+    }
+
+```
+
+### Find lenght of a String
+
+```dart 
+    void main() {
+        String text = "Welcome to Dart";
+        print(text.length); // returns the lenght of text.
+    }
+```
+
+### Trim Strings
+
+```dart 
+    void main() {
+        String text = "     Welcome to Dart   ";
+        print(text); // returns the same text above.
+        print(text.trim()); // returns the same string but the unwanted spaces will be removed.
+    }
+```
+
+## List Operations
+---
+### Iterate over a list
+
+```dart
+    void main() {
+        var newList = [10, 15, 40, 25, 70];
+        for (int i = 0; i < newList.length; i++) {
+            print(newList[i]);
+        }
+    }
+```
+
+### Reverse a List
+
+```dart
+    void main() {
+        var myList = [10, 15, 40, 25, 30];
+        var newList = myList.reversed;
+        print(newList);
+    }
+```
+
+### Add an Element to a List
+
+```dart 
+    void main() {
+        var myList = [10, 40, 70];
+        myList.add(100);
+        print(myList);
+    }
+```
+
+### Remove Element in a List
+
+```dart 
+    void main() {
+        var myList = [10, 20, 30, 40, 50];
+        myList.remove(10); // This will remove 10 from the list.
+        myList.removeLast(); // This will remove the last item in the list.
+        myList.removeRange(0, 2); // This will remove the values from 10 to 30
+    }
+```
+
+### Merge two Lists
+
+```dart 
+    void main() {
+        var list1 = [10, 20, 30, 40, 50];
+        var list2 = [60, 70, 80, 90, 100];
+        list1.addAll(list2);
+        print(list1);
+    }
+`
